@@ -1,0 +1,24 @@
+# Paquete local: se compila desde el árbol de fuentes de este repositorio.
+#   cd packaging/arch && makepkg -si
+pkgname=visor3d
+pkgver=0.1.0
+pkgrel=2
+pkgdesc="Visor ultrarrápido de STL, 3MF (Bambu Studio / OrcaSlicer) y STEP, con miniaturas para Dolphin"
+arch=('x86_64')
+license=('MIT')
+depends=('glfw' 'libdeflate' 'opencascade' 'kio' 'kcoreaddons' 'qt6-base' 'gcc-libs' 'glibc')
+makedepends=('cmake' 'ninja')
+options=('!debug')
+
+build() {
+    cmake -S "$startdir/../.." -B build -G Ninja \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DVISOR3D_NATIVE=ON
+    cmake --build build
+}
+
+package() {
+    DESTDIR="$pkgdir" cmake --install build
+    install -Dm644 "$startdir/../../LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

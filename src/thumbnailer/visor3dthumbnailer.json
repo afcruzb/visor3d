@@ -1,0 +1,13 @@
+{
+    "CacheThumbnail": true,
+    "KPlugin": {
+        "MimeTypes": [
+            "model/stl",
+            "model/3mf",
+            "model/step"
+        ],
+        "Name": "3D models (visor3d)",
+        "Name[es]": "Modelos 3D (visor3d)"
+    },
+    "ThumbnailerVersion": "1"
+}

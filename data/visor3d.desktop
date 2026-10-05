@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Name=Visor 3D
+GenericName=Visor de modelos 3D
+Comment=Vista previa rápida de STL, 3MF y STEP
+Exec=visor3d %f
+Icon=visor3d
+Terminal=false
+Categories=Graphics;3DGraphics;Viewer;
+MimeType=model/stl;model/3mf;model/step;
+Keywords=stl;3mf;step;stp;3d;preview;bambu;orca;
+StartupNotify=false
+StartupWMClass=visor3d
